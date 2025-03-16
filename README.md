@@ -1,1 +1,1 @@
-# aws-cloud-optimizer
+# azure-cloud-optimizer

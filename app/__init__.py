@@ -1,8 +1,8 @@
 from fastapi import FastApi
 
 app = FastAPI(
-        title="Alibaba Cloud Cost Optimization API",
-        description="Automated detection and decommissioning of unused Alibaba Cloud Resources",
+        title="Azure Cloud Cost Optimization API",
+        description="Automated detection and decommissioning of unused Azure Cloud Resources",
         version="1.0.0",
 )
 
