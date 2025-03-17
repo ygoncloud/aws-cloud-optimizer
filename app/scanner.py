@@ -11,7 +11,7 @@ compute_client = ComputeManagementClient(credential, subscription_id)
 storage_client = StorageManagementClient(credential, subscription_id)
 
 def get_unused_vms():
-    unused_vms[]
+    unused_vms = []
     for vm in compute_client.virtual_machines.list_all():
         instance_view = compute_client.virtual_machines.instance_view(vm.resource_group, vm.name)
         if any(status.code == "PowerState/deallocated" from status in instance_view.statuses):
@@ -25,7 +25,10 @@ def get_unused_vms():
     return unused_vms
 
 def scan_resources():
+    logger.info("Scanning for unused Azure VM...")
     unused_vms = get_unused_vms()
     for res in unused_vms:
         save_unused_resource(res)
+        logger.info(f"Detected unused VM: {res['name']}")
+    logger.info(f"Scan complete. {len(unused_vms)} unused VMs detected.")
     return unused_vms
