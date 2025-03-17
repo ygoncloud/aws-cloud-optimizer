@@ -11,13 +11,20 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
       - name: Set Up Python
         uses: actions/setup-python@v3
         with:
           python-version: '3.9'
+
       - name: Install Dependencies
         run: pip install -r requirements.txt
+
+      - name: Run Cloud Resource Scan
+        run: PYTHONPATH=. python scripts/run_scan.py
+
       - name: Run Cloud Resource Scan
         run: python scripts/run_scan.py
+
       - name: Run Decommissioning
         run: python app/decommission.py
