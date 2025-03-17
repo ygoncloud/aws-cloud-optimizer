@@ -1,4 +1,4 @@
-from fastapi import FastApi
+from fastapi import FastAPI
 
 app = FastAPI(
         title="Azure Cloud Cost Optimization API",
