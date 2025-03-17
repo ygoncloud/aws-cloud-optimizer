@@ -3,6 +3,7 @@ from azure.mgmt.compute import ComputeManagementClient
 from azure.mgmt.storage import StorageManagementClient
 from app.database import save_unused_resource
 from config import subscription_id
+from app.logging_config import logger
 
 credential = DefaultAzureCredential()
 

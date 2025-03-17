@@ -4,6 +4,7 @@ from app.database import get_db, Base, engine
 from app.models import CloudResource
 from app.scanner import scan_resources
 from app.decommission import decommission_resources
+from app.logging_config import logger
 
 app = FastAPI(
         title="Azure Cloud Cost Optimization API",

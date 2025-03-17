@@ -1,0 +1,12 @@
+import logging
+
+logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handler=[
+            logging.FileHandler("optimizer.log"),
+            logging.StreamHandler()
+            ]
+        )
+
+logger = logging.getLogger(__name__)
